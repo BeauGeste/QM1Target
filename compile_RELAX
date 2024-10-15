@@ -1,0 +1,5 @@
+#icc -Wall -c main.cpp
+#icc -c main.cpp
+gcc -c main.cpp
+#gcc -nofor-main -lstdc++ main.o -lgsl -lgslcblas -o RELAX
+gcc -lstdc++ main.o -lgsl -lgslcblas -o RELAX

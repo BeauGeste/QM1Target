@@ -1,0 +1,24 @@
+# this script average over the different disorder configurations (NDIS)
+
+#cd /Users/nicholasharmon/Library/Developer/Xcode/DerivedData/QM_MTMH-azevmprsnzodfweehmlckqnikddv/#Build/Products/Debug
+
+echo "Enter input filename:"
+   read input
+echo "Enter output filename:"
+   read output
+
+#echo "Enter output destination:"
+#   read location
+
+
+   
+awk '{a[$1]+=$2; c[$1]++} END {for(x in a) printf "%s %.6f\n",x,a[x]/c[x] }' $input > temp
+
+sort -k1g temp > $output
+
+
+
+#mv $output /Users/nicholasharmon/Desktop/spin\ simulations/Spin\ Orbit\ Diffusion\ Stephen/$location
+
+
+#awk '{a[$1]+=$2; c[$1]++} END {for(x in a) printf "%s %.6f\n",x,a[x]/c[x] > "outMT_s0.dat"}' $input
